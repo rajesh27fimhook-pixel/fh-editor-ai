@@ -9,3 +9,6 @@ scikit-image
 matplotlib
 tqdm
 jupyter
+fastapi
+uvicorn[standard]
+python-multipart
