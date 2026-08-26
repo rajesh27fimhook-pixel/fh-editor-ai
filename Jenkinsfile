@@ -21,13 +21,13 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t ${IMAGE_NAME}:ci .'
+                sh 'docker build -t ${IMAGE_NAME}:v1 .'
             }
         }
 
         stage('Test Docker Image') {
             steps {
-                sh 'docker run --rm ${IMAGE_NAME}:ci python -c "import torch, cv2, numpy, scipy, skimage; print(\\"AI environment OK\\")"'
+                sh 'docker run --rm ${IMAGE_NAME}:v1 python -c "import torch, cv2, numpy, scipy, skimage; print(\\"AI environment OK\\")"'
             }
         }
 
@@ -47,7 +47,7 @@ pipeline {
 
         stage('Push Image') {
             steps {
-                sh 'docker push ${IMAGE_NAME}:ci'
+                sh 'docker push ${IMAGE_NAME}:v1'
             }
         }
     }
