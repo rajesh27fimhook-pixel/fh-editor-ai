@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'ghcr.io/rajesh27fimhook/fh-editor-ai'
+       IMAGE_NAME = 'ghcr.io/rajesh27fimhook-pixel/fh-editor-ai'
     }
 
     stages {
